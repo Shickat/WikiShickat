@@ -18,10 +18,13 @@
   <!-- ENCABEZADO -->
   
   <header>
-    <div style="display: flex; justify-content: flex-start; padding: 1rem;">
-      <a href="#" onclick="abrirModalTelegram(); return false;" class="telegram-link">
-      <i class="fa-brands fa-telegram"></i>
-    </a>
+    <div class="floating-actions">
+      <a href="#" onclick="abrirModalTelegram(); return false;" class="telegram-link" aria-label="Abrir grupo de Telegram">
+        <i class="fa-brands fa-telegram"></i>
+      </a>
+      <a href="#" onclick="abrirModalApp(); return false;" class="app-link" aria-label="Descargar la app">
+        <i class="fa-solid fa-download"></i>
+      </a>
     </div>
     <div class="logo-container">
       <div class="logo-wrapper">
@@ -1709,6 +1712,20 @@
         <li>Ambos deben estar visibles para todos los miembros</li>
       </ul>
       <a href="https://t.me/+an-mou-XW-JhZWE0" target="_blank" rel="noopener noreferrer" class="modal-btn">Solicitar Entrar</a>
+    </div>
+  </div>
+  <div id="notification" class="notification"></div>
+
+  <!-- VENTANA APP -->
+
+  <div id="app-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="Logos/logo_wiki.png" alt="Logo de la aplicación Wiki" class="modal-logo">
+      <p class="requisitos-text">WIKI SHICKAT APP</p>
+      <p class="requisitos-subtext">Lleva la wiki sin abrir el navegador y recibe contenido actualizado.</p>
+      <i><p class="requisitos-subtext">Version v1</p></i>
+      <a href="https://apk.e-droid.net/apk/app3888310-lsew0y.apk?v=5" target="_blank" rel="noopener noreferrer" class="modal-btn">Descargar</a>
     </div>
   </div>
   <div id="notification" class="notification"></div>

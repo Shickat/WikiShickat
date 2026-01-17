@@ -327,15 +327,29 @@ function abrirModalTelegram() {
   document.getElementById('telegram-modal').classList.add('show');
 }
 
+// --- App ---
+function abrirModalApp() {
+  document.getElementById('app-modal').classList.add('show');
+}
+
+// Cierre de modales (cada uno con su botón X)
 document.addEventListener('DOMContentLoaded', function() {
-  const modal = document.getElementById('telegram-modal');
-  const closeBtn = document.querySelector('.close');
-  closeBtn.addEventListener('click', function() {
-    modal.classList.remove('show');
+  const telegramModal = document.getElementById('telegram-modal');
+  const appModal = document.getElementById('app-modal');
+
+  const telegramClose = telegramModal ? telegramModal.querySelector('.close') : null;
+  const appClose = appModal ? appModal.querySelector('.close') : null;
+
+  telegramClose && telegramClose.addEventListener('click', function() {
+    telegramModal.classList.remove('show');
   });
+
+  appClose && appClose.addEventListener('click', function() {
+    appModal.classList.remove('show');
+  });
+
   window.addEventListener('click', function(e) {
-    if (e.target == modal) {
-      modal.classList.remove('show');
-    }
+    if (e.target === telegramModal) telegramModal.classList.remove('show');
+    if (e.target === appModal) appModal.classList.remove('show');
   });
 });

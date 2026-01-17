@@ -1048,12 +1048,20 @@ h1 {
 }
 /* FIN AVISO FLOTANTE DE PRUEBAS */
 
-/* Boton Telegram */
-.telegram-link {
+/* Contenedor fijo para botones flotantes */
+.floating-actions {
   position: fixed;
   top: 16px;
   left: 16px;
-  z-index: 999;
+  z-index: 1100;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Boton Telegram */
+.telegram-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1068,6 +1076,7 @@ h1 {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  position: relative;
 }
 
 .telegram-link:hover {
@@ -1106,6 +1115,71 @@ h1 {
   }
 
   .telegram-link i {
+    font-size: 1rem;
+  }
+}
+
+/* Boton App */
+.app-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #4eaaff;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0.95;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.app-link:hover {
+  background: #3896e5;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.app-link i {
+  font-size: 1.2rem;
+}
+
+/* Temas claros/oscuro */
+.light-theme .app-link {
+  background: var(--btn-bg, #007bff);
+}
+
+.dark-theme .app-link {
+  background: #4eaaff;
+}
+
+/* Responsive: mantener separación y ajuste de tamaño */
+@media (max-width: 768px) {
+  .floating-actions {
+    gap: 10px;
+  }
+  .app-link {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-actions {
+    gap: 8px;
+  }
+  .app-link {
+    font-size: 0.75rem;
+    padding: 7px 12px;
+    border-radius: 8px;
+  }
+
+  .app-link i {
     font-size: 1rem;
   }
 }
