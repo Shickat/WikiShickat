@@ -19,7 +19,7 @@ const translations = {
     tooltipVODs: 'Repeticiones',
     tooltipEventos: 'Eventos',
     downloadApp: 'DESCARGA LA APP',
-    downloadLink: 'Descarga aqui (APK Mylinkpaste v3.8)',
+    downloadLink: 'Descarga aqui (APK Mylinkpaste v4.1)',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'BUSCADORES ACESTREAM',
@@ -46,7 +46,7 @@ const translations = {
     tooltipVODs: 'Replays',
     tooltipEventos: 'Events',
     downloadApp: 'DOWNLOAD THE APP',
-    downloadLink: 'Download here (APK Mylinkpaste v3.8)',
+    downloadLink: 'Download here (APK Mylinkpaste v4.1)',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'ACESTREAM SEARCH',
@@ -73,7 +73,7 @@ const translations = {
     tooltipVODs: 'Rediffusions',
     tooltipEventos: 'Événements',
     downloadApp: 'TÉLÉCHARGER L\'APPLICATION',
-    downloadLink: 'Télécharger ici (APK Mylinkpaste v3.8)',
+    downloadLink: 'Télécharger ici (APK Mylinkpaste v4.1)',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'RECHERCHE ACESTREAM',
@@ -100,7 +100,7 @@ const translations = {
     tooltipVODs: 'Repetições',
     tooltipEventos: 'Eventos',
     downloadApp: 'BAIXE O APP',
-    downloadLink: 'Baixar aqui (APK Mylinkpaste v3.8)',
+    downloadLink: 'Baixar aqui (APK Mylinkpaste v4.1)',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'PESQUISADORES ACESTREAM',
@@ -127,7 +127,7 @@ const translations = {
     tooltipVODs: 'Wiederholungen',
     tooltipEventos: 'Ereignisse',
     downloadApp: 'APP HERUNTERLADEN',
-    downloadLink: 'Hier herunterladen (APK Mylinkpaste v3.8)',
+    downloadLink: 'Hier herunterladen (APK Mylinkpaste v4.1)',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'ACESTREAM-SUCHEN',
@@ -154,7 +154,7 @@ const translations = {
     tooltipVODs: 'Повторы',
     tooltipEventos: 'События',
     downloadApp: 'СКАЧАТЬ ПРИЛОЖЕНИЕ',
-    downloadLink: 'Скачать здесь (APK Mylinkpaste v3.8)',
+    downloadLink: 'Скачать здесь (APK Mylinkpaste v4.1)',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'ПОИСК ACESTREAM',
@@ -181,7 +181,7 @@ const translations = {
     tooltipVODs: '重播',
     tooltipEventos: '赛事',
     downloadApp: '下载应用',
-    downloadLink: '点击这里下载 (APK Mylinkpaste v3.8)',
+    downloadLink: '点击这里下载 (APK Mylinkpaste v4.1)',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'ACESTREAM 搜索',
