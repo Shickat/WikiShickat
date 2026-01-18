@@ -20,6 +20,11 @@ const translations = {
     tooltipEventos: 'Eventos',
     downloadApp: 'DESCARGA LA APP',
     downloadLink: 'Descarga aqui (APK Mylinkpaste v4.1)',
+    appModalTitle: 'WIKI SHICKAT APP',
+    appModalDesc: 'Lleva la wiki sin abrir el navegador y recibe contenido actualizado.',
+    appModalCodeLabel: 'Código Downloader:',
+    appModalVersion: 'Versión v1',
+    appModalDownload: 'Descargar',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'BUSCADORES ACESTREAM',
@@ -47,6 +52,11 @@ const translations = {
     tooltipEventos: 'Events',
     downloadApp: 'DOWNLOAD THE APP',
     downloadLink: 'Download here (APK Mylinkpaste v4.1)',
+    appModalTitle: 'WIKI SHICKAT APP',
+    appModalDesc: 'Use the wiki without opening the browser and get updated content.',
+    appModalCodeLabel: 'Downloader Code:',
+    appModalVersion: 'Version v1',
+    appModalDownload: 'Download',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'ACESTREAM SEARCH',
@@ -74,6 +84,11 @@ const translations = {
     tooltipEventos: 'Événements',
     downloadApp: 'TÉLÉCHARGER L\'APPLICATION',
     downloadLink: 'Télécharger ici (APK Mylinkpaste v4.1)',
+    appModalTitle: 'WIKI SHICKAT APP',
+    appModalDesc: 'Utilisez la wiki sans ouvrir le navigateur et recevez du contenu mis à jour.',
+    appModalCodeLabel: 'Code de téléchargement:',
+    appModalVersion: 'Version v1',
+    appModalDownload: 'Télécharger',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'RECHERCHE ACESTREAM',
@@ -101,6 +116,11 @@ const translations = {
     tooltipEventos: 'Eventos',
     downloadApp: 'BAIXE O APP',
     downloadLink: 'Baixar aqui (APK Mylinkpaste v4.1)',
+    appModalTitle: 'WIKI SHICKAT APP',
+    appModalDesc: 'Leve a wiki sem abrir o navegador e receba conteúdo atualizado.',
+    appModalCodeLabel: 'Código do Downloader:',
+    appModalVersion: 'Versão v1',
+    appModalDownload: 'Baixar',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'PESQUISADORES ACESTREAM',
@@ -128,6 +148,11 @@ const translations = {
     tooltipEventos: 'Ereignisse',
     downloadApp: 'APP HERUNTERLADEN',
     downloadLink: 'Hier herunterladen (APK Mylinkpaste v4.1)',
+    appModalTitle: 'WIKI SHICKAT APP',
+    appModalDesc: 'Nutze die Wiki ohne den Browser zu öffnen und erhalte aktualisierte Inhalte.',
+    appModalCodeLabel: 'Downloader-Code:',
+    appModalVersion: 'Version v1',
+    appModalDownload: 'Herunterladen',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'ACESTREAM-SUCHEN',
@@ -155,6 +180,11 @@ const translations = {
     tooltipEventos: 'События',
     downloadApp: 'СКАЧАТЬ ПРИЛОЖЕНИЕ',
     downloadLink: 'Скачать здесь (APK Mylinkpaste v4.1)',
+    appModalTitle: 'WIKI SHICKAT APP',
+    appModalDesc: 'Пользуйтесь вики без открытия браузера и получайте обновлённый контент.',
+    appModalCodeLabel: 'Код загрузчика:',
+    appModalVersion: 'Версия v1',
+    appModalDownload: 'Скачать',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'ПОИСК ACESTREAM',
@@ -182,6 +212,11 @@ const translations = {
     tooltipEventos: '赛事',
     downloadApp: '下载应用',
     downloadLink: '点击这里下载 (APK Mylinkpaste v4.1)',
+    appModalTitle: 'WIKI SHICKAT APP',
+    appModalDesc: '无需打开浏览器即可使用维基，并获取更新内容。',
+    appModalCodeLabel: '下载器代码:',
+    appModalVersion: '版本 v1',
+    appModalDownload: '下载',
     categories: {
       'ACESTREAM': 'ACESTREAM',
       'BUSCADORES ACESTREAM': 'ACESTREAM 搜索',
@@ -341,6 +376,7 @@ class LanguageManager {
     this.updateFilterNoDataModal();
     this.updateTelegramModal();
     this.updateDownloadTexts();
+    this.updateAppModal();
   }
 
   updateFilterLabels() {
@@ -435,22 +471,25 @@ class LanguageManager {
   }
 
   updateTelegramModal() {
-    // Actualizar texto del modal de Telegram
-    const requisitosText = document.querySelector('.requisitos-text');
+    // Limitar las actualizaciones al modal de Telegram si existe la lista de requisitos
+    const listElem = document.querySelector('.requisitos-list');
+    if (!listElem) return;
+
+    const container = listElem.closest('.modal-content') || document;
+
+    const requisitosText = container.querySelector('.requisitos-text');
     if (requisitosText) {
       requisitosText.textContent = this.getTranslation('telegramRequirements');
     }
 
-    // Actualizar lista de requisitos
-    const requisitos = document.querySelectorAll('.requisitos-list li');
+    const requisitos = listElem.querySelectorAll('li');
     if (requisitos.length >= 3) {
       requisitos[0].textContent = this.getTranslation('requirement1');
       requisitos[1].textContent = this.getTranslation('requirement2');
       requisitos[2].textContent = this.getTranslation('requirement3');
     }
 
-    // Actualizar botón de solicitud
-    const modalBtn = document.querySelector('.modal-btn');
+    const modalBtn = container.querySelector('.modal-btn');
     if (modalBtn) {
       modalBtn.textContent = this.getTranslation('joinButton');
     }
@@ -467,6 +506,33 @@ class LanguageManager {
     const downloadLink = document.querySelector('[data-translate-key="downloadLink"]');
     if (downloadLink) {
       downloadLink.textContent = this.getTranslation('downloadLink');
+    }
+  }
+
+  updateAppModal() {
+    const appModal = document.getElementById('app-modal');
+    if (!appModal) return;
+
+    const title = appModal.querySelector('.requisitos-text');
+    if (title) {
+      title.textContent = this.getTranslation('appModalTitle');
+    }
+
+    const subtexts = appModal.querySelectorAll('.requisitos-subtext');
+    if (subtexts[0]) {
+      subtexts[0].textContent = this.getTranslation('appModalDesc');
+    }
+    if (subtexts[1]) {
+      const codeValue = subtexts[1].querySelector('i') ? subtexts[1].querySelector('i').textContent.trim() : '';
+      subtexts[1].innerHTML = `${this.getTranslation('appModalCodeLabel')} <i>${codeValue}</i>`;
+    }
+    if (subtexts[2]) {
+      subtexts[2].textContent = this.getTranslation('appModalVersion');
+    }
+
+    const downloadBtn = appModal.querySelector('.modal-btn');
+    if (downloadBtn) {
+      downloadBtn.textContent = this.getTranslation('appModalDownload');
     }
   }
 }
