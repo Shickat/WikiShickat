@@ -1,5 +1,4 @@
 // Sistema de Multiidioma para Wiki Shickat
-// Soporta: Español (es) e Inglés (en)
 
 const translations = {
   es: {
@@ -23,7 +22,7 @@ const translations = {
     appModalTitle: 'WIKI SHICKAT APP',
     appModalDesc: 'Lleva la wiki sin abrir el navegador y recibe contenido actualizado.',
     appModalCodeLabel: 'Código Downloader:',
-    appModalVersion: 'Versión v1.1',
+    appModalVersion: 'Versión v1',
     appModalDownload: 'Descargar',
     categories: {
       'ACESTREAM': 'ACESTREAM',
@@ -56,7 +55,7 @@ const translations = {
     appModalTitle: 'WIKI SHICKAT APP',
     appModalDesc: 'Use the wiki without opening the browser and get updated content.',
     appModalCodeLabel: 'Downloader Code:',
-    appModalVersion: 'Version v1.1',
+    appModalVersion: 'Version v1',
     appModalDownload: 'Download',
     categories: {
       'ACESTREAM': 'ACESTREAM',
@@ -89,7 +88,7 @@ const translations = {
     appModalTitle: 'WIKI SHICKAT APP',
     appModalDesc: 'Utilisez la wiki sans ouvrir le navigateur et recevez du contenu mis à jour.',
     appModalCodeLabel: 'Code de téléchargement:',
-    appModalVersion: 'Version v1.1',
+    appModalVersion: 'Version v1',
     appModalDownload: 'Télécharger',
     categories: {
       'ACESTREAM': 'ACESTREAM',
@@ -122,7 +121,7 @@ const translations = {
     appModalTitle: 'WIKI SHICKAT APP',
     appModalDesc: 'Leve a wiki sem abrir o navegador e receba conteúdo atualizado.',
     appModalCodeLabel: 'Código do Downloader:',
-    appModalVersion: 'Versão v1.1',
+    appModalVersion: 'Versão v1',
     appModalDownload: 'Baixar',
     categories: {
       'ACESTREAM': 'ACESTREAM',
@@ -155,7 +154,7 @@ const translations = {
     appModalTitle: 'WIKI SHICKAT APP',
     appModalDesc: 'Nutze die Wiki ohne den Browser zu öffnen und erhalte aktualisierte Inhalte.',
     appModalCodeLabel: 'Downloader-Code:',
-    appModalVersion: 'Version v1.1',
+    appModalVersion: 'Version v1',
     appModalDownload: 'Herunterladen',
     categories: {
       'ACESTREAM': 'ACESTREAM',
@@ -188,7 +187,7 @@ const translations = {
     appModalTitle: 'WIKI SHICKAT APP',
     appModalDesc: 'Пользуйтесь вики без открытия браузера и получайте обновлённый контент.',
     appModalCodeLabel: 'Код загрузчика:',
-    appModalVersion: 'Версия v1.1',
+    appModalVersion: 'Версия v1',
     appModalDownload: 'Скачать',
     categories: {
       'ACESTREAM': 'ACESTREAM',
@@ -221,7 +220,7 @@ const translations = {
     appModalTitle: 'WIKI SHICKAT APP',
     appModalDesc: '无需打开浏览器即可使用维基，并获取更新内容。',
     appModalCodeLabel: '下载器代码:',
-    appModalVersion: '版本 v1.1',
+    appModalVersion: '版本 v1',
     appModalDownload: '下载',
     categories: {
       'ACESTREAM': 'ACESTREAM',
