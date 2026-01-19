@@ -31,7 +31,8 @@ const translations = {
       'ONLINE': 'EN LINEA',
       'PROGRAMACION': 'PROGRAMACIÓN',
       'REPETICIONES': 'REPETICIONES',
-      'MYLINKPASTE CODIGOS': 'CÓDIGOS MYLINKPASTE'
+      'MYLINKPASTE CODIGOS': 'CÓDIGOS MYLINKPASTE',
+      'FAVORITOS': 'FAVORITOS'
     }
   },
   en: {
@@ -63,7 +64,8 @@ const translations = {
       'ONLINE': 'ONLINE',
       'PROGRAMACION': 'PROGRAMMING',
       'REPETICIONES': 'REPLAYS',
-      'MYLINKPASTE CODIGOS': 'MYLINKPASTE CODES'
+      'MYLINKPASTE CODIGOS': 'MYLINKPASTE CODES',
+      'FAVORITOS': 'FAVORITES'
     }
   },
   fr: {
@@ -95,7 +97,8 @@ const translations = {
       'ONLINE': 'EN LIGNE',
       'PROGRAMACION': 'PROGRAMMATION',
       'REPETICIONES': 'REPLAYS',
-      'MYLINKPASTE CODIGOS': 'CODES MYLINKPASTE'
+      'MYLINKPASTE CODIGOS': 'CODES MYLINKPASTE',
+      'FAVORITOS': 'FAVORIS'
     }
   },
   pt: {
@@ -127,7 +130,8 @@ const translations = {
       'ONLINE': 'ONLINE',
       'PROGRAMACION': 'PROGRAMAÇÃO',
       'REPETICIONES': 'REPLAYS',
-      'MYLINKPASTE CODIGOS': 'CÓDIGOS MYLINKPASTE'
+      'MYLINKPASTE CODIGOS': 'CÓDIGOS MYLINKPASTE',
+      'FAVORITOS': 'FAVORITOS'
     }
   },
   de: {
@@ -159,7 +163,8 @@ const translations = {
       'ONLINE': 'ONLINE',
       'PROGRAMACION': 'PROGRAMMIERUNG',
       'REPETICIONES': 'WIEDERHOLUNGEN',
-      'MYLINKPASTE CODIGOS': 'MYLINKPASTE-CODES'
+      'MYLINKPASTE CODIGOS': 'MYLINKPASTE-CODES',
+      'FAVORITOS': 'FAVORITEN'
     }
   },
   ru: {
@@ -191,7 +196,8 @@ const translations = {
       'ONLINE': 'ОНЛАЙН',
       'PROGRAMACION': 'ПРОГРАММИРОВАНИЕ',
       'REPETICIONES': 'ПОВТОРЕНИЯ',
-      'MYLINKPASTE CODIGOS': 'КОДЫ MYLINKPASTE'
+      'MYLINKPASTE CODIGOS': 'КОДЫ MYLINKPASTE',
+      'FAVORITOS': 'ИЗБРАННОЕ'
     }
   },
   zh: {
@@ -223,7 +229,8 @@ const translations = {
       'ONLINE': '在线',
       'PROGRAMACION': '编程',
       'REPETICIONES': '重播',
-      'MYLINKPASTE CODIGOS': 'MYLINKPASTE 代码'
+      'MYLINKPASTE CODIGOS': 'MYLINKPASTE 代码',
+      'FAVORITOS': '收藏夹'
     }
   }
 };

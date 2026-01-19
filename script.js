@@ -13,7 +13,114 @@ function mostrarNotificacion(msg) {
   }, 1800);
 }
 
-// --- Buscador de canales ---
+// --- Sistema de Favoritos ---
+function obtenerFavoritosGuardados() {
+  const favoritos = localStorage.getItem('favoritos');
+  return favoritos ? JSON.parse(favoritos) : [];
+}
+
+function guardarFavoritos(favoritos) {
+  localStorage.setItem('favoritos', JSON.stringify(favoritos));
+}
+
+function toggleFavorito(btn, card) {
+  const titulo = card.getAttribute('data-titulo');
+  let favoritos = obtenerFavoritosGuardados();
+  
+  const index = favoritos.indexOf(titulo);
+  if (index > -1) {
+    // Remover de favoritos
+    favoritos.splice(index, 1);
+    btn.innerHTML = '<i class="fa-regular fa-star"></i>';
+    mostrarNotificacion('Removido de favoritos');
+  } else {
+    // Agregar a favoritos
+    favoritos.push(titulo);
+    btn.innerHTML = '<i class="fa-solid fa-star"></i>';
+    mostrarNotificacion('Agregado a favoritos');
+  }
+  
+  guardarFavoritos(favoritos);
+  
+  // Actualizar todos los botones de estrella del mismo canal
+  document.querySelectorAll(`.canal-card[data-titulo="${titulo}"]`).forEach(c => {
+    const btn_temp = c.querySelector('.canal-actions .canal-btn:has(i[class*="fa-star"])');
+    if (btn_temp) {
+      btn_temp.innerHTML = btn.innerHTML;
+    }
+  });
+  
+  // Actualizar la sección de favoritos con los filtros actuales
+  actualizarFavoritos();
+  
+  // Aplicar filtros para ocultar el original y actualizar visibilidad de secciones
+  aplicarFiltros();
+}
+
+function actualizarFavoritos() {
+  const favoritos = obtenerFavoritosGuardados();
+  const favoritosContainer = document.getElementById('canal-list-favoritos');
+  
+  if (!favoritosContainer) {
+    console.error('No se encontró el contenedor de favoritos');
+    return;
+  }
+  
+  // Limpiar favoritos
+  favoritosContainer.innerHTML = '';
+  
+  // Obtener TODOS los canales que NO están en el contenedor de favoritos
+  const todosLosCanales = document.querySelectorAll('.canal-card:not(#canal-list-favoritos .canal-card)');
+  
+  // Obtener criterios de filtro actual
+  const texto = normalizarTexto(buscador.value || '');
+  const checkboxesSeleccionados = document.querySelectorAll('.language-checkbox-group input[type="checkbox"]:checked');
+  const idiomasSeleccionados = Array.from(checkboxesSeleccionados).map(cb => cb.value);
+  
+  todosLosCanales.forEach(card => {
+    const titulo = card.getAttribute('data-titulo');
+    
+    if (favoritos.includes(titulo)) {
+      // Verificar si el card pasa los filtros de búsqueda e idioma
+      const cardTitulo = normalizarTexto(card.querySelector('.canal-nombre').textContent || '');
+      const cardLangs = (card.getAttribute('data-lang') || '').split(',').map(s => s.trim());
+      
+      const pasaTexto = texto === '' ? true : cardTitulo.includes(texto);
+      const pasaIdioma = idiomasSeleccionados.length === 0 ? true : cardLangs.some(lang => idiomasSeleccionados.includes(lang));
+      
+      // Solo clonar si pasa los filtros
+      if (pasaTexto && pasaIdioma) {
+        // Clonar el nodo directamente en lugar de usar outerHTML
+        const clone = card.cloneNode(true);
+        
+        // Remover atributos style de TODOS los elementos para resetear estilos inline
+        clone.removeAttribute('style');
+        clone.querySelectorAll('[style]').forEach(el => {
+          el.removeAttribute('style');
+        });
+        
+        // Actualizar el botón de estrella en el clon
+        const starBtnClone = clone.querySelector('.canal-actions .canal-btn:has(i[class*="fa-star"])');
+        if (starBtnClone) {
+          starBtnClone.innerHTML = '<i class="fa-solid fa-star"></i>';
+          // Hacer que el botón de estrella del clon también funcione
+          starBtnClone.onclick = function() {
+            toggleFavorito(this, card);
+            return false;
+          };
+        }
+        
+        favoritosContainer.appendChild(clone);
+      }
+    }
+  });
+}
+
+function agregarEventListenersBotones(container) {
+  // Esta función puede no ser necesaria, pero la mantengo por si se usa después
+}
+
+// Buscador de canales ---
 function normalizarTexto(txt) {
   return txt
     .toLowerCase()
@@ -40,6 +147,7 @@ function obtenerCategoriasUnicas() {
 
 function aplicarFiltros() {
   const texto = normalizarTexto(buscador.value || '');
+  const favoritos = obtenerFavoritosGuardados();
   
   // Obtener idiomas seleccionados
   const checkboxesSeleccionados = document.querySelectorAll('.language-checkbox-group input[type="checkbox"]:checked');
@@ -49,16 +157,25 @@ function aplicarFiltros() {
   const categoriaSeleccionada = document.querySelector('.category-checkbox-group input[type="radio"]:checked');
   const categoriaSeleccionadaValor = categoriaSeleccionada ? categoriaSeleccionada.value : null;
 
-  document.querySelectorAll('.canal-card').forEach(card => {
+  document.querySelectorAll('.canal-card:not(#canal-list-favoritos .canal-card)').forEach(card => {
     const titulo = normalizarTexto(card.querySelector('.canal-nombre').textContent || '');
     const cardLangs = (card.getAttribute('data-lang') || '').split(',').map(s => s.trim());
+    const cardTitulo = card.getAttribute('data-titulo');
+    const esFavorito = favoritos.includes(cardTitulo);
+    const estaEnFavoritos = card.closest('#canal-list-favoritos');
 
     const pasaTexto = texto === '' ? true : titulo.includes(texto);
     
     // Si no hay idiomas seleccionados, mostrar todo; si hay, verificar si alguno coincide
     const pasaIdioma = idiomasSeleccionados.length === 0 ? true : cardLangs.some(lang => idiomasSeleccionados.includes(lang));
 
-    card.style.display = (pasaTexto && pasaIdioma) ? '' : 'none';
+    // Si está en favoritos, siempre mantenerlo oculto en las otras categorías
+    if (esFavorito && !estaEnFavoritos) {
+      card.style.display = 'none';
+    } else if (!esFavorito && !estaEnFavoritos) {
+      // Si no está en favoritos y no está en la sección de favoritos, aplicar filtros normalmente
+      card.style.display = (pasaTexto && pasaIdioma) ? '' : 'none';
+    }
   });
 
   // Filtrar por categoría
@@ -262,9 +379,51 @@ function llenarFiltroCategoriasUnicas() {
   }
 }
 
+function inicializarFavoritos() {
+  const favoritos = obtenerFavoritosGuardados();
+  
+  // Agregar botones de estrella que falten y configurar event listeners
+  document.querySelectorAll('.canal-card:not(#canal-list-favoritos .canal-card)').forEach(card => {
+    let starBtn = card.querySelector('.canal-actions .canal-btn:has(i[class*="fa-star"])');
+    
+    // Si no existe el botón, crearlo
+    if (!starBtn) {
+      const canalActions = card.querySelector('.canal-actions');
+      if (canalActions) {
+        starBtn = document.createElement('button');
+        starBtn.className = 'canal-btn';
+        starBtn.innerHTML = '<i class="fa-regular fa-star"></i>';
+        canalActions.appendChild(starBtn);
+      }
+    }
+    
+    // Configurar el botón
+    if (starBtn) {
+      const titulo = card.getAttribute('data-titulo');
+      
+      // Actualizar icono si está en favoritos
+      if (favoritos.includes(titulo)) {
+        starBtn.innerHTML = '<i class="fa-solid fa-star"></i>';
+      } else {
+        starBtn.innerHTML = '<i class="fa-regular fa-star"></i>';
+      }
+      
+      // Agregar evento click
+      starBtn.onclick = function() {
+        toggleFavorito(this, card);
+        return false;
+      };
+    }
+  });
+  
+  // Actualizar la sección de favoritos
+  actualizarFavoritos();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   llenarFiltroIdiomas();
   llenarFiltroCategoriasUnicas();
+  inicializarFavoritos();
   aplicarFiltros();
   // Botón para limpiar filtros (si existe en DOM)
   const clearBtn = document.getElementById('clear-filters-btn');

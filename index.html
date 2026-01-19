@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Wiki Shickat</title>
   <link rel="icon" type="image/png" href="Logos/logo_wiki.png">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- NAVIDAD (DESCOMENTAR EN EPOCAS)
   <link rel="stylesheet" href="Navidad/styles.css"> -->
-  <script src="language.js?v=6"></script>
+  <script src="language.js?v=7"></script>
 </head>
 
 <body>
@@ -68,6 +68,17 @@
       <p class="no-results-text">No hay resultados disponibles con los filtros aplicados.</p>
       <button id="clear-filters-btn" class="clear-filters-btn">Limpiar filtros</button>
     </div>
+
+    <!-- FAVORITOS -->
+
+    <section class="category-section">
+      <h2 class="category-title" data-original="FAVORITOS">FAVORITOS</h2>
+      <div class="canal-list" id="canal-list-favoritos">
+        <!-- Los favoritos se rellenan dinámicamente -->
+      </div>
+    </section>
+
+
     <!-- CATEGORIAS: cada sección contiene tarjetas con enlaces web -->
     <section class="category-section">
       <h2 class="category-title">ACESTREAM</h2>
@@ -387,6 +398,33 @@
         </article>
 
 
+
+        <article class="canal-card" data-titulo="PIMPLETV" data-lang="ru">
+          <div class="canal-header">
+            <span class="canal-nombre">PIMPLETV 
+              <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Russia.svg" alt="RU" class="flag-badge" data-lang="ru">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://www.pimpletv.ru" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://www.pimpletv.ru
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://www.pimpletv.ru')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://www.pimpletv.ru', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
       </div>
     </section>
 
@@ -628,6 +666,41 @@
 
 
 
+        <article class="canal-card" data-titulo="SPORTSBAY" data-lang="es,en,br,pt,it,fr,de,tr,">
+          <div class="canal-header">
+            <span class="canal-nombre">SPORTSBAY 
+              <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
+              <span class="has-tooltip" data-tooltip="VPN"><i class="fa-brands fa-cloudflare"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/Brazil.svg" alt="BR" class="flag-badge" data-lang="br">
+              <img src="Flags/Portugal.svg" alt="PT" class="flag-badge" data-lang="pt">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
+              <img src="Flags/Germany.svg" alt="DE" class="flag-badge" data-lang="de">
+              <img src="Flags/Turkey.svg" alt="TR" class="flag-badge" data-lang="tr">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://www.sportsbay.dk" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://www.sportsbay.dk
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://www.sportsbay.dk')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://www.sportsbay.dk', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
+
         <article class="canal-card" data-titulo="SPORT +" data-lang="es">
           <div class="canal-header">
             <span class="canal-nombre">SPORT + 
@@ -715,13 +788,14 @@
 
 
 
-        <article class="canal-card" data-titulo="PPV" data-lang="es">
+        <article class="canal-card" data-titulo="PPV" data-lang="en,fr">
           <div class="canal-header">
             <span class="canal-nombre">PPV
               <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
             </span>
             <div class="lang-badges" aria-hidden>
-              <!--<img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">-->
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
             </div>
           </div>
           <div class="canal-link-row">
@@ -769,14 +843,20 @@
 
 
 
-        <article class="canal-card" data-titulo="LIVE TV" data-lang="es">
+        <article class="canal-card" data-titulo="LIVE TV" data-lang="es,ru,pl,fr,it,sr,pt">
           <div class="canal-header">
             <span class="canal-nombre">LIVE TV
               <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
               <span class="has-tooltip" data-tooltip="VPN"><i class="fa-brands fa-cloudflare"></i></span>
             </span>
             <div class="lang-badges" aria-hidden>
-              <!--<img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">-->
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/Russia.svg" alt="RU" class="flag-badge" data-lang="ru">
+              <img src="Flags/Poland.svg" alt="PL" class="flag-badge" data-lang="pl">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+              <img src="Flags/Serbia.svg" alt="SR" class="flag-badge" data-lang="sr">
+              <img src="Flags/Portugal.svg" alt="PT" class="flag-badge" data-lang="pt">
             </div>
           </div>
           <div class="canal-link-row">
@@ -797,13 +877,53 @@
 
 
 
-        <article class="canal-card" data-titulo="SOSPLAY" data-lang="es">
+        <article class="canal-card" data-titulo="SOCCER STREAMS" data-lang="es,en,it,de,fr,pt,nl">
+          <div class="canal-header">
+            <span class="canal-nombre">SOCCER STREAMS
+              <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+              <img src="Flags/Germany.svg" alt="DE" class="flag-badge" data-lang="de">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
+              <img src="Flags/Portugal.svg" alt="PT" class="flag-badge" data-lang="pt">
+              <img src="Flags/Netherlands.svg" alt="NL" class="flag-badge" data-lang="nl">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://livetv.sx" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://livetv.sx
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://livetv.sx')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://livetv.sx', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
+
+        <article class="canal-card" data-titulo="SOSPLAY" data-lang="es,en,uk,fr,nl,it,tr,de">
           <div class="canal-header">
             <span class="canal-nombre">SOSPLAY
               <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
             </span>
             <div class="lang-badges" aria-hidden>
-              <!--<img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">-->
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/UK.svg" alt="UK" class="flag-badge" data-lang="uk">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
+              <img src="Flags/Netherlands.svg" alt="NL" class="flag-badge" data-lang="nl">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+              <img src="Flags/Turkey.svg" alt="TR" class="flag-badge" data-lang="tr">
+              <img src="Flags/Germany.svg" alt="DE" class="flag-badge" data-lang="de">
             </div>
           </div>
           <div class="canal-link-row">
@@ -862,6 +982,45 @@
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
             </button>
             <button class="canal-btn" onclick="copiarAlPortapapeles('https://daddyhd.com', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
+
+        <article class="canal-card" data-titulo="STRUMYK" data-lang="es,en,uk,fr,pt,de,sr,ar,tr,br,he,it">
+          <div class="canal-header">
+            <span class="canal-nombre">STRUMYK
+              <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
+              <span class="has-tooltip" data-tooltip="Listado"><i class="fa-solid fa-clipboard-list"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/UK.svg" alt="UK" class="flag-badge" data-lang="uk">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
+              <img src="Flags/Portugal.svg" alt="PT" class="flag-badge" data-lang="pt">
+              <img src="Flags/Germany.svg" alt="DE" class="flag-badge" data-lang="de">
+              <img src="Flags/Serbia.svg" alt="SR" class="flag-badge" data-lang="sr">
+              <img src="Flags/SaudiArabia.svg" alt="AR" class="flag-badge" data-lang="ar">
+              <img src="Flags/Turkey.svg" alt="TR" class="flag-badge" data-lang="tr">
+              <img src="Flags/Brazil.svg" alt="BR" class="flag-badge" data-lang="br">
+              <img src="Flags/Israel.svg" alt="HE" class="flag-badge" data-lang="he">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://strumyk.uk" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://strumyk.uk
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://strumyk.uk')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://strumyk.uk', this)">
               <i class="fa-solid fa-copy"></i> Copiar
             </button>
           </div>
@@ -946,13 +1105,262 @@
 
 
 
-        <article class="canal-card" data-titulo="ACEZTRIMS" data-lang="es">
+        <article class="canal-card" data-titulo="TUDEPORTE" data-lang="es,en,it,fr,de,br,nl,tr">
+          <div class="canal-header">
+            <span class="canal-nombre">TUDEPORTE
+              <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
+              <img src="Flags/Germany.svg" alt="DE" class="flag-badge" data-lang="de">
+              <img src="Flags/Brazil.svg" alt="BR" class="flag-badge" data-lang="br">
+              <img src="Flags/Netherlands.svg" alt="NL" class="flag-badge" data-lang="nl">
+              <img src="Flags/Turkey.svg" alt="TR" class="flag-badge" data-lang="tr">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://tudeporte.pro" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://tudeporte.pro
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://tudeporte.pro')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://tudeporte.pro', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
+
+        <article class="canal-card" data-titulo="VEGETA TV" data-lang="es,en,it,fr">
+          <div class="canal-header">
+            <span class="canal-nombre">VEGETA TV
+              <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://vegeta-tv-2.zya.me" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://vegeta-tv-2.zya.me
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://vegeta-tv-2.zya.me')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://vegeta-tv-2.zya.me', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+        <article class="canal-card" data-titulo="FUTBOL LIBE" data-lang="es,en,tr,it">
+          <div class="canal-header">
+            <span class="canal-nombre">FUTBOL LIBRE
+              <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
+              <span class="has-tooltip" data-tooltip="Listado"><i class="fa-solid fa-clipboard-list"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/Turkey.svg" alt="TR" class="flag-badge" data-lang="tr">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://futbollibrefullhd.com/" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://futbollibrefullhd.com/
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://futbollibrefullhd.com/')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://futbollibrefullhd.com/', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
+
+        <article class="canal-card" data-titulo="DEPORTE LIBRE" data-lang="es,en,uk,de,fr,sr,tr,pt,pl,nl,it">
+          <div class="canal-header">
+            <span class="canal-nombre">DEPORTE LIBRE
+              <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
+              <span class="has-tooltip" data-tooltip="Listado"><i class="fa-solid fa-clipboard-list"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/UK.svg" alt="UK" class="flag-badge" data-lang="uk">
+              <img src="Flags/Germany.svg" alt="DE" class="flag-badge" data-lang="de">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
+              <img src="Flags/Serbia.svg" alt="SR" class="flag-badge" data-lang="sr">
+              <img src="Flags/Turkey.svg" alt="TR" class="flag-badge" data-lang="tr">
+              <img src="Flags/Portugal.svg" alt="PT" class="flag-badge" data-lang="pt">
+              <img src="Flags/Poland.svg" alt="PL" class="flag-badge" data-lang="pl">
+              <img src="Flags/Netherlands.svg" alt="NL" class="flag-badge" data-lang="nl">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://deporte-libre.click/" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://deporte-libre.click/
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://deporte-libre.click/')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://deporte-libre.click/', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
+
+        <article class="canal-card" data-titulo="ROJADIRECTATVONLINE" data-lang="es,en,it,nl,fr,de,pt,br">
+          <div class="canal-header">
+            <span class="canal-nombre">ROJADIRECTATVONLINE
+              <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+              <img src="Flags/Netherlands.svg" alt="NL" class="flag-badge" data-lang="nl">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
+              <img src="Flags/Germany.svg" alt="DE" class="flag-badge" data-lang="de">
+              <img src="Flags/Portugal.svg" alt="PT" class="flag-badge" data-lang="pt">
+              <img src="Flags/Brazil.svg" alt="BR" class="flag-badge" data-lang="br">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://www.rdtvonline.com" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://www.rdtvonline.com
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://www.rdtvonline.com')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://www.rdtvonline.com', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
+
+        <article class="canal-card" data-titulo="FUTBOL LIBRE HD" data-lang="es,en">
+          <div class="canal-header">
+            <span class="canal-nombre">FUTBOL LIBRE HD
+              <span class="has-tooltip" data-tooltip="Listado"><i class="fa-solid fa-clipboard-list"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://www.futbollibre2.com" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://www.futbollibre2.com
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://www.futbollibre2.com')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://www.futbollibre2.com', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
+
+        <article class="canal-card" data-titulo="TELEXTREMA" data-lang="es,en">
+          <div class="canal-header">
+            <span class="canal-nombre">TELEXTREMA
+              <span class="has-tooltip" data-tooltip="Listado"><i class="fa-solid fa-clipboard-list"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://www.telextrema2.com" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://www.telextrema2.com
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://www.telextrema2.com')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://www.telextrema2.com', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
+
+        <article class="canal-card" data-titulo="TV POR INTERNET" data-lang="es,en">
+          <div class="canal-header">
+            <span class="canal-nombre">TV POR INTERNET
+              <span class="has-tooltip" data-tooltip="Listado"><i class="fa-solid fa-clipboard-list"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://www.tvporinternet2.com" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://www.tvporinternet2.com
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://www.tvporinternet2.com')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://www.tvporinternet2.com', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
+
+        <article class="canal-card" data-titulo="ACEZTRIMS" data-lang="en">
           <div class="canal-header">
             <span class="canal-nombre">ACEZTRIMS
               <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
             </span>
             <div class="lang-badges" aria-hidden>
-              <!--<img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">-->
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
             </div>
           </div>
           <div class="canal-link-row">
@@ -1006,13 +1414,18 @@
 
 
 
-        <article class="canal-card" data-titulo="SPORTSURGE" data-lang="es">
+        <article class="canal-card" data-titulo="SPORTSURGE" data-lang="es,en,it,tr,de,fr">
           <div class="canal-header">
             <span class="canal-nombre">SPORTSURGE
               <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
             </span>
             <div class="lang-badges" aria-hidden>
-              <!--<img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">-->
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+              <img src="Flags/Turkey.svg" alt="TR" class="flag-badge" data-lang="tr">
+              <img src="Flags/Germany.svg" alt="DE" class="flag-badge" data-lang="de">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
             </div>
           </div>
           <div class="canal-link-row">
@@ -1033,14 +1446,19 @@
 
 
 
-        <article class="canal-card" data-titulo="FOOTYBYTE" data-lang="en">
+        <article class="canal-card" data-titulo="FOOTYBYTE" data-lang="es,en,it,tr,de,fr">
           <div class="canal-header">
             <span class="canal-nombre">FOOTYBYTE
               <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
               <span class="has-tooltip" data-tooltip="VPN"><i class="fa-brands fa-cloudflare"></i></span>
             </span>
             <div class="lang-badges" aria-hidden>
-              <!--<img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">-->
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+              <img src="Flags/Turkey.svg" alt="TR" class="flag-badge" data-lang="tr">
+              <img src="Flags/Germany.svg" alt="DE" class="flag-badge" data-lang="de">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
             </div>
           </div>
           <div class="canal-link-row">
@@ -1061,13 +1479,48 @@
 
 
 
-        <article class="canal-card" data-titulo="TOTALSPORTEK" data-lang="en">
+        <article class="canal-card" data-titulo="PEPPER LIVE" data-lang="es,en,pt,it">
+          <div class="canal-header">
+            <span class="canal-nombre">PEPPER LIVE
+              <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/Portugal.svg" alt="PT" class="flag-badge" data-lang="pt">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://www.pepperlive.info" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://www.pepperlive.info
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://www.pepperlive.info')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://www.pepperlive.info', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
+
+
+        <article class="canal-card" data-titulo="TOTALSPORTEK" data-lang="es,en,it,tr,de,fr">
           <div class="canal-header">
             <span class="canal-nombre">TOTALSPORTEK
               <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
             </span>
             <div class="lang-badges" aria-hidden>
-              <!--<img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">-->
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+              <img src="Flags/Turkey.svg" alt="TR" class="flag-badge" data-lang="tr">
+              <img src="Flags/Germany.svg" alt="DE" class="flag-badge" data-lang="de">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
             </div>
           </div>
           <div class="canal-link-row">
@@ -1142,13 +1595,18 @@
 
 
 
-        <article class="canal-card" data-titulo="STREAMEAST" data-lang="en">
+        <article class="canal-card" data-titulo="STREAMEAST" data-lang="es,en,it,tr,de,fr">
           <div class="canal-header">
             <span class="canal-nombre">STREAMEAST
               <span class="has-tooltip" data-tooltip="Eventos"><i class="fa-solid fa-calendar-days"></i></span>
             </span>
             <div class="lang-badges" aria-hidden>
-              <!--<img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">-->
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+              <img src="Flags/USA.svg" alt="EN" class="flag-badge" data-lang="en">
+              <img src="Flags/Italy.svg" alt="IT" class="flag-badge" data-lang="it">
+              <img src="Flags/Turkey.svg" alt="TR" class="flag-badge" data-lang="tr">
+              <img src="Flags/Germany.svg" alt="DE" class="flag-badge" data-lang="de">
+              <img src="Flags/France.svg" alt="FR" class="flag-badge" data-lang="fr">
             </div>
           </div>
           <div class="canal-link-row">
@@ -1393,6 +1851,32 @@
           </div>
         </article>
 
+        
+
+        <article class="canal-card" data-titulo="FUTBOL TV" data-lang="es">
+          <div class="canal-header">
+            <span class="canal-nombre">FUTBOL TV
+            </span>
+            <div class="lang-badges" aria-hidden>
+              <img src="Flags/Spain.svg" alt="ES" class="flag-badge" data-lang="es">
+            </div>
+          </div>
+          <div class="canal-link-row">
+            <a class="site-link" href="https://www.futboltv.info" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-link"></i>
+              https://www.futboltv.info
+            </a>
+          </div>
+          <div class="canal-actions">
+            <button class="canal-btn" onclick="window.open('https://www.futboltv.info')">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+            </button>
+            <button class="canal-btn" onclick="copiarAlPortapapeles('https://www.futboltv.info', this)">
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+        </article>
+
 
       </div>
     </section>
@@ -1484,7 +1968,7 @@
         </article>
 
 
-        <article class="canal-card" data-titulo="ELCANO" data-lang="es">
+        <article class="canal-card" data-titulo="ELCANO-MLP" data-lang="es">
           <div class="canal-header">
             <span class="canal-nombre">ELCANO
             </span>
@@ -1507,7 +1991,7 @@
 
 
 
-        <article class="canal-card" data-titulo="MAMANDURRIAS" data-lang="es">
+        <article class="canal-card" data-titulo="MAMANDURRIAS-MLP" data-lang="es">
           <div class="canal-header">
             <span class="canal-nombre">MAMANDURRIAS
             </span>
@@ -1530,7 +2014,7 @@
 
 
 
-        <article class="canal-card" data-titulo="TOKYO" data-lang="es">
+        <article class="canal-card" data-titulo="TOKYO-MLP" data-lang="es">
           <div class="canal-header">
             <span class="canal-nombre">TOKYO
             </span>
@@ -1553,7 +2037,7 @@
 
 
 
-        <article class="canal-card" data-titulo="ICASTRESANA" data-lang="es">
+        <article class="canal-card" data-titulo="ICASTRESANA-MLP" data-lang="es">
           <div class="canal-header">
             <span class="canal-nombre">ICASTRESANA
             </span>
@@ -1576,7 +2060,7 @@
 
 
 
-        <article class="canal-card" data-titulo="EUPHORBIA HELIOSCOPIA" data-lang="es">
+        <article class="canal-card" data-titulo="EUPHORBIA HELIOSCOPIA-MLP" data-lang="es">
           <div class="canal-header">
             <span class="canal-nombre">EUPHORBIA HELIOSCOPIA
             </span>
@@ -1605,7 +2089,7 @@
 
 
 
-        <article class="canal-card" data-titulo="NANOBOX" data-lang="es">
+        <article class="canal-card" data-titulo="NANOBOX-MLP" data-lang="es">
           <div class="canal-header">
             <span class="canal-nombre">NANOBOX
             </span>
@@ -1628,7 +2112,7 @@
 
 
 
-        <article class="canal-card" data-titulo="NANOSTREAMS" data-lang="es">
+        <article class="canal-card" data-titulo="NANOSTREAMS-MLP" data-lang="es">
           <div class="canal-header">
             <span class="canal-nombre">NANOSTREAMS
             </span>
@@ -1651,7 +2135,7 @@
 
 
 
-        <article class="canal-card" data-titulo="MATTEO" data-lang="es">
+        <article class="canal-card" data-titulo="MATTEO-MLP" data-lang="es">
           <div class="canal-header">
             <span class="canal-nombre">MATTEO
             </span>
@@ -1729,7 +2213,7 @@
   </div>
   -->
   <!-- ----------------------  -->
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
   <!-- NAVIDAD (DESCOMENTAR EN EPOCAS)
   <script src="Navidad/script.js"></script> -->
 </body>
